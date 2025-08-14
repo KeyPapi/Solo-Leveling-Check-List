@@ -1,0 +1,14 @@
+<!-- PWA: manifest + tema -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#071027">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<script>
+  // Registrar Service Worker cuando la página cargue
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(console.error);
+    });
+  }
+</script>
